@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
-import { CreateUser } from './entities/user';
+import { User } from './entities/user';
 import { Tweet } from './entities/tweet';
 
 @Injectable()
 export class AppService {
 
-  private users: CreateUser[] = [];
+  private users: User[] = [];
   private tweets: Tweet[] = [];
 
   getHello(): string {

@@ -1,18 +1,19 @@
-export class TweetCore {
-    public username: string;
-    public tweet: string;
-  
-    constructor(username: string, tweet: string) {
-      this.username = username;
-      this.tweet = tweet;
-    }
+import { User } from "./user";
+
+export class Tweet {
+  private _user: User;
+  private _tweet: string;
+
+  constructor(user: User, tweet: string) {
+    this._user = user;
+    this._tweet = tweet;
   }
-  
-  export class Tweet extends TweetCore {
-    public avatar: string;
-  
-    constructor(username: string, avatar: string, tweet: string) {
-      super(username, tweet);
-      this.avatar = avatar;
-    }
+
+  get user(): User {
+    return this._user;
   }
+
+  get tweet(): string {
+    return this._tweet;
+  }
+}
