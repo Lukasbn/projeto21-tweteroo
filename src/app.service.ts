@@ -8,8 +8,8 @@ export class AppService {
   private tweets: Tweet[] = [];
   private limit = 15
 
-  getHello(): string {
-    return 'Hello World!';
+  getHealth(): string {
+    return "I'm okay!";
   }
 
   signUp(username: string, avatar: string) {
