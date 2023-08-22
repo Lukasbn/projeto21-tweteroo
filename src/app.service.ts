@@ -11,4 +11,13 @@ export class AppService {
   getHello(): string {
     return 'Hello World!';
   }
+
+  signUp(username: string, avatar: string) {
+    const user = new User(username, avatar);
+    this.users.push(user);
+  }
+
+  getUserByUsername(username: string): User {
+    return this.users.find(user => user.username === username);
+  }
 }
