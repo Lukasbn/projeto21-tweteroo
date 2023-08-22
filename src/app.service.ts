@@ -52,4 +52,16 @@ export class AppService {
       end: page*this.limit
     }
   }
+
+  getTweetsByUsername(username : string){
+    const tweets = this.tweets.filter(tweets => tweets.user.username === username)
+
+    return tweets.map(tweets =>(
+      {
+        username: tweets.user.username,
+        avatar: tweets.user.avatar,
+        tweet: tweets.tweet
+      }
+    ))
+  }
 }
